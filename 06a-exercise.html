@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+</head>
+<body>
+
+    <input type="number" id="inputHour" placeholder="Enter a value 0-23">
+    <button id="submitButton">Submit</button>
+
+    <script>
+
+        const submitBtn = document.getElementById("submitButton");
+        const submitInput = document.getElementById("inputHour");
+        let name = "Aleksa";
+
+        submitBtn.addEventListener("click",() => {
+            const hour = parseInt(submitInput.value);
+            if (Number.isNaN(hour) || hour < 0 || hour > 23) {
+                console.log("Please enter a number between 0 and 23");
+                return;
+            }
+            if(hour >= 6 && hour < 12){
+                console.log(`Good morning ${name}!`);
+                alert(`Good morning ${name}!`);
+            }else if(hour >= 12 && hour < 18){
+                console.log(`Good afternoon ${name}!`);
+                alert(`Good afternoon ${name}!`);
+            }else{
+                console.log(`Good night ${name}!`);
+                alert(`Good night ${name}!`);
+            }
+        });
+        
+
+        /*let hour = 6;
+        if(hour >=6 && hour < 12){
+            console.log("Good morning!");
+        }else if (hour >= 12 && hour < 18){
+            console.log("Good afternoon!");
+        }else{
+            console.log("Good night!");
+        }*/
+    </script>
+</body>
+</html>
