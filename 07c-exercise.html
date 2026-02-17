@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length converter</title>
+</head>
+<body>
+    
+    <button onclick="convertLength(12, 'km', 'ft');">Convert length</button>
+
+    <script>
+
+        function convertLength(length, from, to){
+            
+            length = parseFloat(length);
+
+            const kmToMile = 0.621371;
+            const mileToKm = 1.60934;
+            const kmToFt = 3280.84;
+            const ftToKm = 0.0003048;
+            const ftToMile = 0.000189394;
+            const mileToFt = 5280;
+
+            const conversions = {
+                "km-mile": length * kmToMile,
+                "km-ft": length * kmToFt,
+                "mile-km": length * mileToKm,
+                "mile-ft": length * mileToFt,
+                "ft-km": length * ftToKm,
+                "ft-mile": length * ftToMile
+            };
+
+            const key = `${from.toLowerCase()}-${to.toLowerCase()}`;
+
+            if(conversions[key] === undefined){
+                console.log("Invalid conversion. Use: km, mile, or ft")
+            }
+            const result = conversions[key];
+            console.log(`${length} ${from} = ${result} ${to}`);
+            return result;
+          
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C to Farenheit</title>
+</head>
+<body>
+    
+    <button onclick="convertToFarenheit(25)">Celsius to Farenheit</button>
+    <button onclick="convertToCelsius(86)">Farenheit to Celsius</button>
+    <button onclick="convertTemperature(25,'C')">Convert to temperature</button>
+
+    <script>
+
+        function convertToFarenheit(celsius){
+            const farenheit = (celsius * 9 / 5) + 32;
+            console.log(farenheit);
+            return farenheit;
+        }
+
+        function convertToCelsius(farenheit){
+            const celsius = (farenheit - 32) * 5 / 9;
+            console.log(celsius);
+            return celsius;
+        }
+
+        function convertTemperature(degrees, unit){
+            if(unit === "C"){
+                console.log(`Temperature in farenheit is: ${convertToFarenheit(degrees)}F`);
+            }else{
+                console.log(`Temperature in celsius is: ${convertToCelsius(degrees)}C`);
+            }
+            
+        }
+    
+    </script>
+</body>
+</html>
